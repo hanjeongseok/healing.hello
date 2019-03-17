@@ -17,7 +17,7 @@ public class FeedReaderTest {
 
 	@Test
 	public void testRead() throws Exception {
-		feedReader.read("http://hanjeongseok.github.io/feed.xml");
+		feedReader.read("http://hanjeongseok.com/feed.xml");
 	}
 
 }
