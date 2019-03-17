@@ -1,7 +1,6 @@
-package healing.spot.hello.rss;
+package healing.spot.hello.feed.service;
 
 import java.net.URL;
-
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
@@ -18,18 +17,16 @@ public class FeedReader {
 			return;
 		}
 
-        try {
-            try (XmlReader reader = new XmlReader(new URL(rssUrl))) {
-                SyndFeed feed = new SyndFeedInput().build(reader);
-                System.out.println(feed.getTitle());
+        try (XmlReader reader = new XmlReader(new URL(rssUrl))) {
+            SyndFeed feed = new SyndFeedInput().build(reader);
+            System.out.println(feed.getTitle());
+            System.out.println("***********************************");
+            for (SyndEntry entry : feed.getEntries()) {
+                System.out.println(entry);
                 System.out.println("***********************************");
-                for (SyndEntry entry : feed.getEntries()) {
-                    System.out.println(entry);
-                    System.out.println("***********************************");
-                }
-                System.out.println("Done");
             }
-        }  catch (Exception e) {
+            System.out.println("Done");
+        } catch (Exception e) {
             e.printStackTrace();
         }
 	}

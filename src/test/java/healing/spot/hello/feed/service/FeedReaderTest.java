@@ -1,10 +1,12 @@
-package healing.spot.hello.rss;
+package healing.spot.hello.feed.service;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+
+import healing.spot.hello.feed.service.FeedReader;
 
 @SpringBootTest
 @RunWith(SpringRunner.class)
@@ -15,7 +17,7 @@ public class FeedReaderTest {
 
 	@Test
 	public void testRead() throws Exception {
-		feedReader.read("http://www.vogella.com/article.rss");
+		feedReader.read("http://hanjeongseok.github.io/feed.xml");
 	}
 
 }
